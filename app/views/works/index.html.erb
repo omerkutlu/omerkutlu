@@ -1,0 +1,52 @@
+<h2 class="title">Works</h2>
+<hr>
+      <div class="large-12 medium-6 small-12 columns">
+
+<section class="rw-wrapper">
+				<h5 class="rw-sentence">
+					<span>Real poetry is like</span>
+					<br>
+					<span>creating beautiful butterflies</span>
+					<br>
+					<span>with a silent touch of</span>
+					<div class="rw-words rw-words-1">
+						<span>spice</span>
+						<span>colors</span>
+						<span>happiness</span>
+						<span>wonder</span>
+						<span>sugar</span>
+						<span>happiness</span>
+					</div>
+					<br>
+					Code is poetry...
+				</h5>
+			</section>
+		</div>
+<br />
+<br />
+
+
+<% @works.in_groups_of(3) do |group| %>
+    <% group.compact.each do |work| %>
+    
+      <div class="large-4 medium-6 small-12 columns">
+
+    <div class="grid">
+
+	<figure class="effect-julia">
+        <%= link_to image_tag(work.thumbnail_url, :width => '100%', data: { no_turbolink: true }), work if work.thumbnail.present? %>
+		<figcaption>
+			<h2><%= link_to work.title, work, data: { no_turbolink: true } %></h2>
+		    <p><%= link_to work.shortdescription, work, data: { no_turbolink: true } %></p>
+		</figcaption>			
+	</figure>
+
+	<!-- ... -->
+	
+</div>
+
+      </div>
+
+    <% end %>
+<% end %>
+<br>

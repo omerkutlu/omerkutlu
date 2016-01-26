@@ -1,0 +1,7 @@
+<h4><i class="fi-social-twitter large"></i>Latest Tweets</h4>
+
+<% Twitter.user_timeline("omer_kutlu", count: 3).each do |tweet| %>
+<blockquote><%= tweet.text %></blockquote>
+<div style="float:right" class="from">&mdash; @<%= tweet.user.screen_name %></div>
+<br />
+<% end %>

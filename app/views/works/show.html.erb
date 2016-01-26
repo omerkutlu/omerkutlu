@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="large-12 columns">
+
+<h2><a href="/works">Works</a></h2>
+<hr>
+<br>
+<div class="large-8 columns">
+    <h4><%= @work.title %></h4>  
+    <p><%= @work.description %></p>
+  </div>
+  <div class="large-4 columns">
+    <p><span class="work-title">Employer:</span> <%= @work.employer %></p>
+    <p><span class="work-title">Date:</span>  <%= @work.year %></p>
+    <p><span class="work-title">Url:</span> <%= @work.url %></p>
+
+  </div>
+</div>
+
+<div class="large-12 columns" data-no-turbolink>
+    <%= image_tag(@work.picture_url,  :width => "100%", data: { no_turbolink: true }, :data => { :action => 'zoom'}) if @work.picture.present? %><br>
+    <%= image_tag(@work.picture2_url, :width => "100%", data: { no_turbolink: true }, :data => { :action => 'zoom'}) if @work.picture2.present? %><br>
+    <%= image_tag(@work.picture3_url, :width => "100%", data: { no_turbolink: true },:data => { :action => 'zoom'}) if @work.picture3.present? %><br>
+    <%= image_tag(@work.picture4_url, :width => "100%", data: { no_turbolink: true }, :data => { :action => 'zoom'}) if @work.picture4.present? %><br>
+    <%= image_tag(@work.picture5_url, :width => "100%", data: { no_turbolink: true },:data => { :action => 'zoom'}) if @work.picture5.present? %>
+</div>
+
+</div>

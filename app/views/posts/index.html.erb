@@ -1,0 +1,20 @@
+<h2 class="title">Blog</h2>
+<hr>
+<div class="large-9 columns">
+<br>
+
+<% @posts.each do |post| %>
+<h4><%= link_to post.title, post %></h4>
+<%= truncate_html (markdown post.body), length: 760 %><%= link_to "Read More", post %>
+<br>
+<hr class="style-three">
+<br>
+<% end %>
+
+</div>
+
+<div class="large-3 columns">
+<%= render "shared/tweets" %>
+</div>
+<br>
+<br>
